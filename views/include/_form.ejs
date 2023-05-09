@@ -1,0 +1,31 @@
+<!-- form handling -->
+<form action="/api/products" method="POST" id="add_product">
+    <div class="new_product">
+        <div class="form-group">
+            <label for="product_name" class="text-light">Product Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="product_name" value="" placeholder="Black Jeans">
+        </div>
+        <div class="form-group">
+            <label for="product_price" class="text-light">Product Price</label>
+            <input type="number" name="product_price" value="" placeholder="">
+        </div>
+        <!-- <div class="form-group">
+            <label for="category_name" class="text-light">Category</label>
+            <input type="text" name="category_name" value="" placeholder="Jeans">
+        </div> -->
+        <div class="form-group">
+            <label for="category_name" class="text-light">Category</label>
+            <select name="category_name">
+                <%for(var i=0;i<category.length;i++){%>
+                <option><%= category[i].category_name%></option>
+                <%}%>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form> 

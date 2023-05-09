@@ -1,0 +1,49 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-category" class="border-shadow">
+                    <span class="text-gradient">New Category +</span>
+                </a>
+                <a href="/" class="border-shadow">
+                    <span class="text-gradient">All Product</span>
+                </a>
+            </div>
+
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Category Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0;i <category.length;i++){%>
+                        <tr>
+                            <td><%=i+1%></td>
+                            <td><%= category[i].category_name%></td>
+                            <td>
+                                <a class="btn border-shadow delete" >
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr> 
+                        <%}%>                   
+                    </tbody>
+                </table>
+            </form>
+
+        </div>
+    </main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
